@@ -2,4 +2,9 @@ ng new hello-world	-utworzenie projektu
 code .	-odpalenie edytora
 code main.ts	-utworzenie pliku i uruchomienie kompilatora
 ng serve	-kompilacja i uruchomienie
-tsc main.ts- kompilacja TS do JS
+tsc main.ts	- kompilacja TS do JS
+node main.js	-uruchomienie
+tsc *.ts --target ES5
+
+ng g c courseName	-ng generate component
+ng g s serviceName
