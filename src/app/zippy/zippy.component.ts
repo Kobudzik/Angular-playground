@@ -12,6 +12,4 @@ export class ZippyComponent{
   toggle(){
     this.isExpanded=!this.isExpanded;
   }
-
-
 }
