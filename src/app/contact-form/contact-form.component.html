@@ -3,15 +3,15 @@
         <div class="form-group">
             <label for="firstName">First name</label>
             <input
-            required
-            minlength="3"
-            pattern="Konrad"
-            ngModel
-            name="firstName"
-            #firstName="ngModel"
-            id="firstName" 
-            type="text"
-            class="form-control"> 
+                required
+                minlength="3"
+                pattern="Konrad"
+                ngModel
+                name="firstName"
+                #firstName="ngModel"
+                id="firstName" 
+                type="text"
+                class="form-control"> 
             <div 
                 class="alert alert-danger"
                 *ngIf="firstName.touched && !firstName.valid">
@@ -31,11 +31,13 @@
         <label for="comment">Comment</label>
         <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
     </div>
+    
     <div class="checkbox">
         <label>
             <input type="checkbox" ngModel name="isSubscribed">Subscribe to mailing list
         </label>
     </div>
+
     <div class="form-group">
         <label for="contactMethod">Contact method</label>
         <select ngModel name="contactMethod" id="contactMethod" class="form-control">

@@ -1,0 +1,47 @@
+<p>course-form works!</p>
+<form #f="ngForm" (ngSubmit)="submit(f.value)">
+    <div class="form-group">
+        <label for="courseName">Course name</label>
+        <input
+            class="form-control"
+            required
+            minlength="3"
+            type="text"
+            name="courseName"
+            ngModel
+            id="courseName"
+            #courseName="ngModel">
+        <div
+            class="alert alert-danger"
+            *ngIf="courseName.touched && !courseName.valid"
+         >
+            <div *ngIf="courseName.errors.required">
+                Course name is required.                
+            </div>
+            <div *ngIf="courseName.errors.minlength">
+            First should be minimum {{courseName.errors.minlength.requiredLength}} characters.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="courseList">Course list
+            <select ngModel name="courseList" id="courseList" class="form-control">
+                <option value=""></option>
+                <option *ngFor="let course of courseList" [value]=course.id>{{course.name}}</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <label for="isSubscribed">
+            <input ngModel id="isSubscribed" name="isSubscribed" type="checkbox">
+            Subscribe to newsletter?
+        </label>
+    </div>
+
+    <p>
+        {{f.value | json}}
+    </p>
+
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>

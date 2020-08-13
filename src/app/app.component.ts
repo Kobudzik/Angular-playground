@@ -32,6 +32,8 @@ export class AppComponent {
     ];
   }
 
+
+
   trackCourse(index, course){
     return course ? course.id : undefined;
 
