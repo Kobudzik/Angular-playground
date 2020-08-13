@@ -20,5 +20,5 @@ export class passwordValidators{
             return{passwordsShouldMatch:true};
         }
         return null;
-        }
+    }
 }
