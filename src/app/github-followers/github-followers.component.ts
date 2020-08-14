@@ -17,7 +17,6 @@ export class GithubFollowersComponent implements OnInit {
       data=> {
         this.followers=data,
         console.log(this.followers);
-  })}
-
-
+  })
+}
 }

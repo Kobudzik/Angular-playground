@@ -1,87 +1,85 @@
-<github-followers></github-followers>
-<hr>
-<favourite 
+<zippy title="Github followers from its API">
+    <github-followers></github-followers>
+</zippy>
+
+<zippy title="Favourite button">
+    <favourite 
     [is-favourite]="post.isFavourite"
     (change)="onFavouriteChanged($event)"
-    ></favourite>
-<hr>
+    >
+    </favourite>
+</zippy>
 
-<courses></courses>
-<hr>
+<zippy title="Course">
+    <course></course>
+</zippy>
 
+<zippy title="Title case">
+    <title-case></title-case>
+</zippy>
 
-<title-case></title-case>
-<hr>
-
-
-
-<like
+<zippy title="Like button">
+    <like
     [likesCount]= "tweet.likesCount"
     [isActive]= "tweet.isLiked"
-></like>
-<hr>
-
-
-
-<div *ngIf="courses.length > 0; then coursesList else noCourses">List of courses:</div>
-<ng-template #coursesList> List of courses</ng-template>
-<ng-template #noCourses>No courses yet.</ng-template>
-<hr>
-
-
-
-<ul class="nav nav-pills">
-    <li [class.active]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
-    <li [class.active]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
-</ul>
-
-<div [ngSwitch]="viewMode">
-    <div *ngSwitchCase="'map'">Map View Content</div>
-    <div *ngSwitchCase="'list'">List View Content</div>
-    <div *ngSwitchDefault>otherwise</div>
-</div>
-<hr>
-
-<button (click)="loadCourses()">Load courses</button>
-
-<ul>
-    <li *ngFor="let course of courses; trackBy: trackCourse">
-    {{course}}
-    </li>
-</ul>
-<hr>
-
-
-<input type="text" appInputFormat="'uppercase'">
-<hr>
-
-
-
-<zippy title="Shipping Details">
-    Shipping Details Content
+    >
+    </like>
 </zippy>
-<zippy title="Billing Details">
-    Billing Details Content
+<zippy title="Course list IF">
+    <div *ngIf="courses.length > 0; then coursesList else noCourses">List of courses:</div>
+    <ng-template #coursesList> List of courses</ng-template>
+    <ng-template #noCourses>No courses yet.</ng-template>
 </zippy>
-<hr>
-
-<H2>Template forms</H2>
-<contact-form></contact-form>
-<hr>
-
-<course-form></course-form>
-<hr>
-
-<signup-form></signup-form>
-<hr>
-
-<new-course-form></new-course-form>
-<hr>
 
 
-<change-password></change-password>
-<hr>
+<zippy title="Nav pills">
+    <ul class="nav nav-pills">
+        <li [class.active]="viewMode=='map'"><a (click)="viewMode='map'">Map View</a></li>
+        <li [class.active]="viewMode=='list'"><a (click)="viewMode='list'">List View</a></li>
+    </ul>
 
-<app-posts></app-posts>
-<hr>
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Map View Content</div>
+        <div *ngSwitchCase="'list'">List View Content</div>
+        <div *ngSwitchDefault>otherwise</div>
+    </div>
+</zippy>
 
+<zippy title="Load courses">
+    <button (click)="loadCourses()">Load courses</button>
+
+    <ul>
+        <li *ngFor="let course of courses; trackBy: trackCourse">
+        {{course}}
+        </li>
+    </ul>
+</zippy>
+
+<zippy title="Input format Upper case">
+    <input type="text" appInputFormat="'uppercase'">    
+</zippy>
+
+<zippy title="FORMS">
+    <zippy title="Template form">
+        <contact-form></contact-form>
+    </zippy>
+
+    <zippy title="Course form">
+        <course-form></course-form>  
+    </zippy>
+
+    <zippy title="Sign Up form">
+        <signup-form></signup-form> 
+    </zippy>
+
+    <zippy title="New course form">
+        <new-course-form></new-course-form> 
+    </zippy>
+
+    <zippy title="Change password form">
+        <change-password></change-password> 
+    </zippy>
+</zippy>
+<zippy title="Posts">
+    <app-posts></app-posts>
+</zippy>
