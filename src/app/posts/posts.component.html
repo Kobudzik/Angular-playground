@@ -1,7 +1,7 @@
 <input
  type="text"
  class="form-control"
- (keyup.enter)="createPost(title)"
+ (keyup.enter)="null"
  #title
  >
 <ul class="list-group">
@@ -21,5 +21,6 @@
         Delete
     </button>
 
-    {{post.title}}</li>
+    {{post.title}}
+    <b>Id= {{post.id}}</b></li>
 </ul>

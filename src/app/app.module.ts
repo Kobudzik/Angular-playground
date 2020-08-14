@@ -1,11 +1,12 @@
+import { AppErrorHandler } from './common/app-error-handler';
 import { PostService } from './services/post.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './summary.pipe';
 import { CourseService } from './course/course.service';
 import { CourseComponent } from './course/course.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { TitleCaseComponent } from './title-case/title-case.component';
@@ -45,11 +46,12 @@ import { PostsComponent } from './posts/posts.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [
     CourseService,
-    PostService
+    PostService,
+    {provide:ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
