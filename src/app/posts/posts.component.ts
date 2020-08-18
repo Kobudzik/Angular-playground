@@ -3,7 +3,7 @@ import { BadInputError } from './../common/bad-input-error';
 import { NotFoundError } from './../common/not-found-error';
 import { AppError } from './../common/app-error';
 import { PostService } from './../services/post.service';
-import { passwordValidators } from './../change-password/passoword.validators';
+import { PasswordValidators } from './../change-password/passoword.validators';
 import { Component, OnInit } from '@angular/core';
 import { catchError, map } from 'rxjs/operators'
  
@@ -22,18 +22,19 @@ export class PostsComponent implements OnInit{
   ngOnInit(){
     this._service.getAll()
     .subscribe(
-      posts=> {
-        this.posts=posts,
+      data=> {
+        this.posts=data,
         console.log(this.posts);
     },
     (error:AppError)=>{
+      //custom app errors to seperate concerns
       if(error instanceof NotFoundError)
       {
         //my defined error
         alert("Not found- error dialog from component (error is instance of not found error");
       }
       else {
-        //global error
+        //global error(AppErrorHandler.ts)
         throw error;
       }
     })

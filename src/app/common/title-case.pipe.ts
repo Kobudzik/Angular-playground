@@ -5,10 +5,21 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TitleCasePipe implements PipeTransform {
 
+  private isPreposition(word:string):boolean{
+    let prepositions= [
+      'of',
+      'the'
+    ]
+    return prepositions.includes(word.toLowerCase());
+  }
+
+  private toTitleCase(word:string):string{
+    return word= word.substring(0,1).toUpperCase() + word.substr(1).toLowerCase();
+  }
+
   transform(value: string): any {
     if(!value) return null;
-
-
+    
     let words = value.split(' ');
 
     for(var i = 0; i < words.length; i++)
@@ -27,20 +38,4 @@ export class TitleCasePipe implements PipeTransform {
 
     return words.join(' ');
   }
-
-  private isPreposition(word:string):boolean{
-    let prepositions= [
-      'of',
-      'the'
-    ]
-    return prepositions.includes(word.toLowerCase());
-  }
-
-
-  private toTitleCase(word:string):string{
-    return word= word.substring(0,1).toUpperCase() + word.substr(1).toLowerCase();
-
-  }
-
-
 }

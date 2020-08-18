@@ -7,12 +7,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FavouriteComponent{
   @Input("is-favourite") isFavourite:boolean;
-  @Output() change = new EventEmitter();
+  //@Output() change = new EventEmitter();
 
   onClick()
   {
       this.isFavourite = !this.isFavourite;
-      this.change.emit({newValue:this.isFavourite});
+      //this.change.emit({newValue:this.isFavourite});
   }
 
 }

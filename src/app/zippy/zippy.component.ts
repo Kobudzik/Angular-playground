@@ -6,7 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./zippy.component.css']
 })
 export class ZippyComponent{
-@Input('title') title :string;
+
+  @Input('title') title :string;
+
   isExpanded:boolean;
 
   toggle(){

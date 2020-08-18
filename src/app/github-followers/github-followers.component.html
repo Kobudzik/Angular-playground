@@ -1,17 +1,15 @@
-<p>github-followers works!</p>
-
 <ul class="list-group">
     <li
-        class="list-group-item"
-        *ngFor="let follower of followers"
+    class="list-group-item"
+    *ngFor="let follower of followers"
     >
-    <div>
-        <img src={{follower.avatar_url}} alt="Follower picture">
-    </div>
-    <div>
-        <h3>{{follower.login}}</h3>
-        <a href={{follower.url}}>{{follower.url}}</a>
-    </div>
-    
+        <div>
+            <img src={{follower.avatar_url}} alt="Follower picture">
+        </div>
+        
+        <div>
+            <h3><a [routerLink]="['/followers', follower.id, follower.login]">{{follower.login}}</a></h3>
+            <a href={{follower.url}}>{{follower.url}}</a>
+        </div>    
     </li>
 </ul>  

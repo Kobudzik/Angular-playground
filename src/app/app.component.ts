@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular app';
+
   post= {
     title: "Title",
     isFavourite: true
   }
+
   tweet= {
     likesCount:0,
     isLiked: false
@@ -36,6 +38,5 @@ export class AppComponent {
 
   trackCourse(index, course){
     return course ? course.id : undefined;
-
   }
 }

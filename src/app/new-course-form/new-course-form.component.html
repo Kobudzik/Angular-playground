@@ -1,7 +1,13 @@
 <form>
     <label>Enter names here:</label>
-    <input type="text" class="form-control"
-    (keyup.enter)="addTopic(topic)" #topic>
+
+    <input
+        type="text"
+        class="form-control"
+        #topic
+        (keyup.enter)="addTopic(topic)"
+    >
+
     <ul class="list-group">
         <li
         *ngFor="let topic of topics.controls"
