@@ -25,7 +25,9 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
 import { RouterModule } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component'
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AnimationsComponent } from './animations/animations.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -51,36 +53,38 @@ import { NotFoundComponent } from './not-found/not-found.component'
     GithubFollowersComponent,
     NavbarComponent,
     GithubProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AnimationsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
-        path:'',
+        path: '',
         component: FavouriteComponent
         },
 
       {
-        path:'followers/:id/:username',
+        path: 'followers/:id/:username',
         component: GithubProfileComponent
         },
 
       {
-        path:'followers',
+        path: 'followers',
         component: GithubFollowersComponent
-        },    
+        },
 
       {
-        path:'posts',
+        path: 'posts',
         component: PostsComponent
       },
 
       {
-        path:'**',
+        path: '**',
         component: NotFoundComponent
       }
     ])
@@ -89,7 +93,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
     CourseService,
     PostService,
     FollowersService,
-    {provide:ErrorHandler, useClass: AppErrorHandler}
+    {provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
